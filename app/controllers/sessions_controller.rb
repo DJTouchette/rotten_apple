@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
 
    def admin?
     user = User.find(session[:user_id])
+    user.admin
    end
 
   

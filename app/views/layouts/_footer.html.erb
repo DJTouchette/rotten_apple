@@ -1,9 +1,19 @@
 <footer>
-<small>
-  <% if current_user %>
-   Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
- <% else %>
-   <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
- <% end %>
-      </small>
+  <small>
+    <% if current_user %>
+    Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+    <% else %>
+      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+    <% end %>
+  </small>
+
+  <small>
+    <%if session[:user_id] != nil%>
+    <%User.find(session[:user_id])%>
+    <% if user.admin %>
+    <br>
+    <%=link_to "Admin Zone", admin_users_path %>
+    <% end %>
+     <%end%>
+  </small>
     </footer>
