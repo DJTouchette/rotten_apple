@@ -1,12 +1,19 @@
 class Admin::UsersController < ApplicationController
   
   def index
-    @users = User.all
+    user = User.find(session[:user_id])
+    if user.admin
+      @users = User.all
+    else
+      redirect_to new_session_path
+    end
+
   end
 
   def new
     @user = User.new
   end
+
 
   protected
 

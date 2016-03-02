@@ -20,5 +20,9 @@ class SessionsController < ApplicationController
      redirect_to movies_path, notice: "Peace Out!"
    end
 
+   def admin?
+    user = User.find(session[:user_id])
+   end
+
   
 end
