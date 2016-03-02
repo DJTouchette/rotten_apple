@@ -1,18 +1,12 @@
 <h1>List of all Users</h1>
 
- <table>                         
-  <tr>
-    <th><h1>Name</h1></th>                         
-    <th><h1>Admin</h1></th>
-    <th><h1>Email</h1></th>
-    <th><h1>User ID</h1></th>
-  </tr>
-<% @users.each do |user| %>       
-  <tr>
-    <td><h3><%= user.firstname %></h3></td>
-    <td><h3><%= user.admin%></h3></td> 
-    <td><h3><%= user.email%></h3></td> 
-    <td><h3><%= user.id%></h3></td> 
-  </tr>
-<% end %>                        
-</table>    
+ <% @users.each do |user| %>
+  <h2><%= user.firstname %></h2>
+  <p>
+  <%= user.email %>
+  </p>
+<% end %>
+<hr />
+<%= paginate @users %>
+<%= page_entries_info @users %>
+

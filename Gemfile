@@ -43,4 +43,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 gem "rmagick", :require => 'RMagick'
 
+# for pagination
+gem 'kaminari', '~> 0.16.3'
+
 

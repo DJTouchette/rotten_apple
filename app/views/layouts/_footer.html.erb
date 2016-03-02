@@ -8,9 +8,11 @@
   </small>
   <br>
   <small>
-    <% if current_user.admin %>
-      Enter admin zone
-      (<%=link_to "Admin Zone", admin_users_path %>)
-    <% end %>
+    <% if current_user %>
+      <% if current_user.admin %>
+        Enter admin zone
+        (<%=link_to "Admin Zone", admin_users_path %>)
+     <% end %>
+    <%end%> 
   </small>
     </footer>

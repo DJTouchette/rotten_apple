@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   def index
     user = User.find(session[:user_id])
     if user.admin
-      @users = User.all
+      @users = User.page(params[:page]).per(10)
     else
       redirect_to new_session_path
     end

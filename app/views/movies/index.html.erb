@@ -9,12 +9,11 @@
       <h3><%= formatted_date(movie.release_date) %></h3>
       <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
       <p><%= movie.description %></p>
+       <% if current_user %>
         <%if current_user.admin %>
           <%= link_to "Update", edit_movie_path(movie) %>
         <%end%>
+      <%end%>
       <hr>
     <% end %>
 
-
-
-<p>Find me in app/views/movies/index.html.erb</p>
