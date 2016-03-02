@@ -1,5 +1,5 @@
-<h1>Sign Up</h1>
-    <%= form_for @user do |f| %>
+
+      <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div>
           <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
@@ -30,9 +30,9 @@
         <%= f.label :password_confirmation %><br>
         <%= f.password_field :password_confirmation %>
       </div>
-      <div>
+       <div>
         <%= f.label :admin, "Admin" %><br>
-        <%= f.hidden_field :admin, :value => false %>
+        <%= f.hidden_field :admin, :value => true %>
       </div>
       <div><%= f.submit "Submit" %></div>
     <% end %>
