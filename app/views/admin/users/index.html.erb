@@ -1,9 +1,10 @@
-<h1>User List</h1>
+<h1>List of all Users</h1>
   
   
 
   <h2><% @users.each do |user|%></h2>
-  <%= user.firstname%>
+  <h3><%= user.firstname%></h3>
+  <h4>Admin: <%= user.admin %></h4>
   <hr>
   <%end%>
  

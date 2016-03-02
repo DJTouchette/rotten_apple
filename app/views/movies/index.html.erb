@@ -1,3 +1,7 @@
+ <%if session[:user_id]%>
+  <%user = User.find(session[:user_id])  %>
+ <%end%>
+
  <h1>Rotten Apples</h1>
     <%= link_to "Submit a movie!", new_movie_path %>
     <hr>
@@ -8,6 +12,13 @@
       <h3><%= formatted_date(movie.release_date) %></h3>
       <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
       <p><%= movie.description %></p>
+      <%if session[:user_id]%>
+        <%if user.admin %>
+          <%= link_to "Update", edit_movie_path(movie) %>
+        <%else%>
+          goodbye
+        <%end%>
+      <%end%>
       <hr>
     <% end %>
 
