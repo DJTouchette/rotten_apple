@@ -47,3 +47,5 @@ gem "rmagick", :require => 'RMagick'
 gem 'kaminari', '~> 0.16.3'
 
 
+
+

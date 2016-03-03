@@ -1,37 +1,41 @@
 <%= form_for @movie do |f| %>
-      <div>
+    <div class="container" id="new_movie_form">
+      <div class="form-group">
         <%= f.label :title %><br>
         <%= f.text_field :title %>
       </div>
-      <div>
+      <div class="form-group">
         <%= f.label :release_date %><br>
         <%= f.date_field :release_date %>
       </div>
-      <div>
+      <div class="form-group">
         <%= f.label :director %><br>
         <%= f.text_field :director %>
       </div>
-      <div>
+      <div class="form-group">
         <%= f.label :runtime_in_minutes %><br>
         <%= f.number_field :runtime_in_minutes %>
       </div>
-      <div>
+      <div class="form-group">
         <%= f.label :image %><br>
         <%= f.file_field :image %>
         <% if f.object.image? %>
           <%= image_tag f.object.image.url %>
           <%= f.label :remove_image %>
-          <%= f.check_box :remove_image %> 
+          <%= f.check_box :remove_image %>
+          <span class="file-custom"></span>
         <% end %>
       </div>
-      <div>
+      <div class="form-group">
         <%= f.label :description %><br>
         <%= f.text_area :description %>
       </div>
       <div>
         <%= f.submit "Submit" %> 
       </div>
+    </div>
     <% end %>
 
+  
 
 
