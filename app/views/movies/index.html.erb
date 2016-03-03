@@ -6,7 +6,10 @@
       <%= link_to image_tag(movie.image), movie_path(movie)%>
       </div>
       <div class="col-xs-6">
-      <h2><%= movie.title%></h2><h3><%=movie.review_average%>/10</h3>
+      <h2><%=movie.title%></h2><h3><% movie.review_average.times do%>
+      <img class="ratings" src="http://www.clker.com/cliparts/G/5/8/9/y/b/apple-core-md.png">
+       <%end%>
+      
       <h3><%= formatted_date(movie.release_date) %></h3>
       <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
       <p><%= movie.description %></p>

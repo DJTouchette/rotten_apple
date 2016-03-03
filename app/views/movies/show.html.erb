@@ -10,7 +10,9 @@
   <div class="col-xs-6">
     <h2><%= @movie.title %> <%if user.admin %>
     (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: { confirm: "You sure?" } %>
-      ) |<%end%> <%= @movie.review_average %>/10
+      ) <%end%><br> <% @movie.review_average.times do%>
+      <img class="ratings" src="http://www.clker.com/cliparts/G/5/8/9/y/b/apple-core-md.png">
+       <%end%>
     </h2>
     <h3><%= formatted_date(@movie.release_date) %></h3>
     <h4>Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>

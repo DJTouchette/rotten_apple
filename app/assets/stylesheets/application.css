@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.navbar-header img {
+  -webkit-transform: rotate(10deg);
+  padding-right: 0px;
+  padding-bottom-bottom: 10px;
+  padding-top: 10px;
+}
 
 .col-xs-6 img{
     width:300px; 
@@ -43,7 +49,10 @@ body {
   font-color: gray;
 }
 
-.navbar-right a {
-  color: #ffff;
+.ratings {
+  height: 20px !important;
+  width: 20px !important;
 }
+
+
 
