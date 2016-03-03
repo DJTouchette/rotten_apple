@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def delete
+    @user = User.find(session[:user_id])
+    if @user.destroy
+      UserMailer.delete_email(@user).deliver_later
+    end
+  end
+
   protected
 
   def user_params
