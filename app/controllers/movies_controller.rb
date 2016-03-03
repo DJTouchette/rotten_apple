@@ -8,12 +8,12 @@ class MoviesController < ApplicationController
     end
 
     def search(param)
-      if param
-        @search_results = Movie.search(param).order("title")
-      else
-        @search_results = Movie.order("created_at DESC")
+      @search_results = Movie.search(param).order("title")
+      if @search_results.present?
+        render :search
+      else 
+        flash[:notice] = "There are no posts containing the term(s) #{param}"
       end
-      render :search
     end
 
    def show
