@@ -54,5 +54,10 @@ body {
   width: 20px !important;
 }
 
+#search-form {
+  text-align: left;
+  /*visibility: hidden;*/
+}
+
 
 
