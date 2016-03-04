@@ -1,28 +1,9 @@
-== README
+===ROTTEN APPLES====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This web app was made as my first rails application. In it you can create a user and post a movie and a description and other users can comment. The front end utilizes bootstrap.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+=========More info==========
+
+This project was made to understand and implement the rails workflow. I was fortunate enough to be able to implement bcrypt and use authentication. Along with mailers, and uploaders. There is also a search function implemented that works through sequel injection(which isnt the most secure way), it utilizes flashes if no results are found so no redirection is necessary. This project was a playground sorry for the mess!
