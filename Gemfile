@@ -41,13 +41,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Image uploading
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
-gem "rmagick", :require => 'RMagick', require: false
+# gem "rmagick", :require => 'RMagick', require: false
 
 # for pagination
 gem 'kaminari', '~> 0.16.3'
 
 gem 'faker', '~> 1.6', '>= 1.6.3'
-
-
-
-
