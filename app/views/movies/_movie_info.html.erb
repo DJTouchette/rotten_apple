@@ -1,9 +1,9 @@
-<%if session[:user_id]%>
-  <%user = User.find(session[:user_id])  %>
-<%end%>
 
-<h2><%= @movie.title %> <%if user.admin %>
+<h2><%= @movie.title %>
+<% if current_user %>
+ <%if current_user.admin %>
     (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: { confirm: "You sure?" } %>
       ) <%end%><br> <% @movie.review_average.times do%>
       <img class="ratings" src="http://www.clker.com/cliparts/G/5/8/9/y/b/apple-core-md.png">
-       <%end%>
+   <%end%>
+  <%end%>
