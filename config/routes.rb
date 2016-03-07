@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
 
   resource :session, only: [:new, :create, :destroy]
-  root to: 'movies#index'
+  root to: 'movies#index' # MM1: Not a big deal but the root path should always be in top 
 
   namespace :admin do
     resources :users
