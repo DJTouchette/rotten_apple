@@ -43,7 +43,9 @@ ActiveRecord::Schema.define(version: 20160301231524) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
-    t.boolean  "admin"
+    t.boolean  "admin" # MM6 This should have been a role instead of a boolean
+                       # having a role would have given you capability to add more roles other than admin if ever
+                       # you needed one in the future. Looking ahead is a good habit in programming.
   end
 
 end
