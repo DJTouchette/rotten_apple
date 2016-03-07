@@ -8,6 +8,11 @@ class MoviesController < ApplicationController
     end
 
     def search(param)
+      # MM2: You could have rendered the index view instead of making a search view like this:
+      # @movies = Movie.search(param).order("title")
+      # if @movies.present?
+      #   render :index
+      # This way you avoid having an extra view
       @search_results = Movie.search(param).order("title")
       if @search_results.present?
         render :search
@@ -49,6 +54,9 @@ class MoviesController < ApplicationController
    end
 
    def destroy
+     # MM3: There isn't any need to have @movie declared here since you aren't going to be using it in a view
+     # Movie.find(params[:id]).destroy
+     # redirect_to movies_path
      @movie = Movie.find(params[:id])
      @movie.destroy
      redirect_to movies_path
